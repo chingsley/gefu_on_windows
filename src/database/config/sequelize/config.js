@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 import dotenv from 'dotenv';
+const { log } = console;
 
 dotenv.config();
 module.exports = {
@@ -12,10 +13,10 @@ module.exports = {
           use_env_variable: 'DATABASE_URL',
         }
       : {
-          username: process.env.DB_USER,
-          password: process.env.DB_PASSWORD,
-          database: process.env.DB_NAME,
-          host: process.env.DB_HOST,
+          // username: process.env.DB_USER,
+          // password: process.env.DB_PASSWORD,
+          // database: process.env.DB_NAME,
+          // host: process.env.DB_HOST,
           // port: process.env.DB_PORT,
           // dialectOptions: {
           //   options: {
@@ -24,14 +25,24 @@ module.exports = {
           //   },
           // },
 
-          // dialect: 'mssql',
-          // dialectModulePath: 'sequelize-msnodesqlv8',
-          // dialectOptions: {
-          //   instanceName: 'MSSQLSERVER',
-          //   trustedConnection: true,
-          // },
-          // host: 'localhost',
-          // database: 'gefu',
+          // ============================================
+
+          dialect: 'mssql',
+          dialectOptions: {
+            options: {
+              trustServerCertificate: true,
+              encrypt: true,
+              validateBulkLoadParameters: true,
+              // instanceName: 'MSSQLSERVER',
+              // trustedConnection: true,
+            },
+          },
+          username: process.env.DB_USER,
+          password: process.env.DB_PASSWORD,
+          database: process.env.DB_NAME,
+          host: process.env.DB_HOST,
+          logging: log,
+          // ============================================
         }),
   },
   test: {
