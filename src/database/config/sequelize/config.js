@@ -13,20 +13,6 @@ module.exports = {
           use_env_variable: 'DATABASE_URL',
         }
       : {
-          // username: process.env.DB_USER,
-          // password: process.env.DB_PASSWORD,
-          // database: process.env.DB_NAME,
-          // host: process.env.DB_HOST,
-          // port: process.env.DB_PORT,
-          // dialectOptions: {
-          //   options: {
-          //     encrypt: true,
-          //     validateBulkLoadParameters: true,
-          //   },
-          // },
-
-          // ============================================
-
           dialect: 'mssql',
           dialectOptions: {
             options: {
@@ -42,7 +28,6 @@ module.exports = {
           database: process.env.DB_NAME,
           host: process.env.DB_HOST,
           logging: log,
-          // ============================================
         }),
   },
   test: {
@@ -68,30 +53,3 @@ module.exports = {
     operatorsAliases: false,
   },
 };
-
-// {
-//   "development": {
-//     "username": "root",
-//     "password": null,
-//     "database": "database_development",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql",
-//     "operatorsAliases": false
-//   },
-//   "test": {
-//     "username": "root",
-//     "password": null,
-//     "database": "database_test",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql",
-//     "operatorsAliases": false
-//   },
-//   "production": {
-//     "username": "root",
-//     "password": null,
-//     "database": "database_production",
-//     "host": "127.0.0.1",
-//     "dialect": "mysql",
-//     "operatorsAliases": false
-//   }
-// }

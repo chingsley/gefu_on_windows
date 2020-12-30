@@ -1,5 +1,4 @@
 import server from './app';
-// console.log('>>>>>>>>>>>>>>>>>>>>>>>> file index.js root');
 const db = require('./database/models');
 
 const PORT = process.env.PORT || 3300;
